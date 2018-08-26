@@ -68,7 +68,8 @@ php decrypt.php msgstore.db.crypt12 key
 
 [reference](https://stackpointer.io/security/decrypt-whatsapp-crypt12-database-messages/559/) [reference](https://stackpointer.io/security/decrypt-whatsapp-crypt8-database-messages/419/)
 
-Now, you should use a sqlite browser to see if the data is really yours!
+Now, you should use a [sqlite browser](https://sqlitebrowser.org/) to see if the data is really yours!
+![msgstore.db](screenshots/msgstore_db.png)
 
 ### 2. convert to iOS format
 
@@ -76,9 +77,10 @@ Now, you should use a sqlite browser to see if the data is really yours!
   when you open the app. Most likely, there won't be any messages prior to moving to iOS.
   You can even send/receive a message or two to be sure that there is something to back up.
 
-* Install Apple configurator 2 and obtain WhatsApp*.ipa by adding WhatsApp to your already-installed-WhatsApp iPhone.
+* Install Apple Configurator 2 and obtain WhatsApp*.ipa by adding WhatsApp to your already-installed-WhatsApp iPhone.
 You'll scrap from `~/Library/Group Containers/K36BKF7T3D.group.com.apple.configurator/Library/Caches/Assets/TemporaryItems/MobileApps/
 `, replace the one on your phone to make sure they are the same version. [reference](https://apple.stackexchange.com/questions/298391/how-do-i-download-an-ios-app-ipa-file-to-my-mac-after-itunes-12-7-update )
+![Apple Configurator](screenshots/iphone_configurator.png)
 
 * Build the migration utility (I'll assume `~/Downloads` folder), or use my binary. Mine was built using Xcode 9.0 Build version 9A235 on macOS 10.13
 
@@ -91,6 +93,7 @@ xcodebuild -project watoi.xcodeproj -target watoi
 
 * Create an unencrypted backup to local computer (not iCloud) with iTunes.
   Find the latest backup in `~/Library/Application Support/MobileSync/Backup`.
+![retrieving backup](screenshots/retrieving_backup.png)
 
 * Locate Whatsapp database file inside the backup and copy it somewhere:
 
@@ -98,7 +101,8 @@ xcodebuild -project watoi.xcodeproj -target watoi
       abcdef01234567890
       $ cp <backup>/ab/abcdef01234567890 ~/Downloads/watoi/ChatStorage.sqlite
       
-Or try the [GUI](https://sqlitebrowser.org/) way if your prefer. Here `abcdef01234567890` is just a place holder, yours will be different. Anyway, the file is located in the folder matching the first 2 characters of your file name.
+Or try the GUI way if your prefer. Here `abcdef01234567890` is just a place holder, yours will be different. Anyway, the file is located in the folder matching the first 2 characters of your file name.
+![manifest sqlite](screenshots/manifest_sqlite.png)
 
 * Extract the contents of `Whatsapp.ipa` (we'll need CoreData description files):
 
