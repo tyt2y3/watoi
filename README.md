@@ -122,11 +122,6 @@ Or try the GUI way if your prefer. Here `abcdef01234567890` is just a place hold
 
 * Restore the backup with iTunes (not Configurator)
 
-## Troubleshooting
+## Footnotes
 
-[![Gitter](https://badges.gitter.im/gitterHQ/gitter.svg)](https://gitter.im/residentsummer_watoi/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
-## More TODOs
-
-* Automate backup editing (skip manual ChatStorage locate/extract/replace)
-* Better command-line parsing (better than none)
+[I](//github.com/tyt2y3) forked the original repository, added more details to the tutorial, and included a binary. Many thanks to the original [author](//github.com/residentsummer/watoi)!
